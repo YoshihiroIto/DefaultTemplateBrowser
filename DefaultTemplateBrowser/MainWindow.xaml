@@ -1,0 +1,38 @@
+﻿<Window x:Class="DefaultTemplateBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Default Template Browser"
+        Width="1400"
+        Height="1000"
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <DockPanel Name="Base" Margin="12">
+        <ListBox Name="TypeList"
+                 DockPanel.Dock="Left"
+                 Width="240"
+                 DisplayMemberPath="Name"
+                 SelectionChanged="TypeList_SelectionChanged" />
+
+        <TabControl>
+            <TabItem Header="ControlTemplate">
+                <avalonedit:TextEditor x:Name="ControlTemplateTextBox"
+                                       FontFamily="Consolas"
+                                       IsReadOnly="True"
+                                       SyntaxHighlighting="XML"
+                                       VerticalScrollBarVisibility="Visible" />
+            </TabItem>
+
+            <TabItem Header="DefaultStyle">
+                <avalonedit:TextEditor x:Name="DefaultStyleTextEditor"
+                                       FontFamily="Consolas"
+                                       IsReadOnly="True"
+                                       SyntaxHighlighting="XML"
+                                       VerticalScrollBarVisibility="Visible" />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
